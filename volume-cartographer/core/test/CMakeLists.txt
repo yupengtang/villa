@@ -921,6 +921,13 @@ if(TARGET vc_seg_add_overlap)
     add_dependencies(test_seg_add_overlap_cli vc_seg_add_overlap)
 endif()
 
+if(TARGET vc_tifxyz_consensus)
+    vc_add_test(NAME test_tifxyz_consensus_cli
+        LIBS doctest::doctest vc_core opencv_core opencv_imgcodecs
+        DEFS VC_TIFXYZ_CONSENSUS_BIN="$<TARGET_FILE:vc_tifxyz_consensus>")
+    add_dependencies(test_tifxyz_consensus_cli vc_tifxyz_consensus)
+endif()
+
 if(TARGET vc_render_tifxyz)
     find_package(Python3 REQUIRED COMPONENTS Interpreter)
     vc_register_test_target(vc_render_tifxyz)

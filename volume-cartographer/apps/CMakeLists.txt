@@ -68,6 +68,9 @@ target_link_libraries(vc_grow_seg_from_seed vc_core vc_tracer Boost::program_opt
 add_executable(vc_seg_add_overlap src/vc_seg_add_overlap.cpp)
 target_link_libraries(vc_seg_add_overlap vc_core)
 
+add_executable(vc_tifxyz_consensus src/vc_tifxyz_consensus.cpp)
+target_link_libraries(vc_tifxyz_consensus vc_core)
+
 add_executable(vc_grow_seg_from_segments src/vc_grow_seg_from_segments.cpp)
 target_link_libraries(vc_grow_seg_from_segments vc_core vc_tracer Boost::program_options)
 
@@ -309,7 +312,7 @@ set(VC_CLI_TARGETS
     vc_tifxyz2zarr_sparse vc_add_ignore_label vc_obj2tifxyz
     vc_obj2tifxyz_legacy vc_flatten vc_tifxyz_inp_mask vc_tifxyz_trim
     vc_straighten vc_cut_windings vc_tifxyz_winding vc_tifxyz_selfcross
-    vc_calc_surface_metrics
+    vc_calc_surface_metrics vc_tifxyz_consensus
     vc_lasagna_line_probe vc_fiber_trace_metric vc_lasagna_maxflow_graph
     vc_cache_root vc_fiber_bake_annotations vc_fiber_constraints
     vc_atlas_inspect vc_atlas_constraints_export vc_atlas_pred_snap_rebuild
@@ -346,7 +349,7 @@ if(VC_USE_PCH)
         vc_tifxyz2zarr_sparse vc_add_ignore_label vc_obj2tifxyz
         vc_obj2tifxyz_legacy vc_flatten vc_tifxyz_inp_mask vc_tifxyz_trim
         vc_cut_windings vc_tifxyz_winding vc_tifxyz_selfcross
-        vc_calc_surface_metrics
+        vc_calc_surface_metrics vc_tifxyz_consensus
         vc_lasagna_line_probe vc_fiber_trace_metric vc_lasagna_maxflow_graph vc_atlas_inspect vc_atlas_constraints_export vc_tifxyz_gengt vc_diffuse_winding vc_create_segment_mask
         vc_merge_tifxyz vc_merge_patch vc_visualize vc_volpkg_convert vc_transform_geom
         vc_gen_normalgrids vc_gen_umbilicus vc_ngrids vc_tifxyz2rgb vc_rgb2tifxyz
